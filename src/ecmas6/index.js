@@ -88,6 +88,112 @@ console.log(education);
   
   
 
+// Arrow Functions, Promesas y Parámetros en objetos
+// ****************************************************************************
+
+let name = 'Miguelito';
+
+let age = 15;
+// Es5
+obj = { name: name, age: age};
+
+// Es6
+obj2 = { name, age };
+console.log(obj2);
+
+// Different ways to write Arrow functions
+
+const names = [
+  {name: 'Migelito', age: 15},
+  {name: 'Angie', age: 8}
+]
+
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+})
+
+let listOfNames2 = names.map(item => console.log(item.name));
+
+const listOfNames3 = (name, age, country) => {
+  ...
+}
+
+const listOfNames4 = name => {
+  ...
+}
+
+const square = num => num * num;
+
+
+
+// Promises
+
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if(true) {
+      resolve('👌🏼');
+      
+    }else {
+      reject('💩');
+    }
+  });
+}
+
+helloPromise()
+  .then(response => console.log(response))
+  .then(() => console.log('Hello world'))
+  .catch(error => console.log(error));
+  
+
+// Clases, Módulos y Generadores
+// ***************************************************************************
+
+// Clases
+
+class calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum (valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+const calc = new calculator();
+console.log(calc.sum(7, 3));
+
+
+// Módulos
+
+import {hello} from './module';
+
+hello();
+
+// Generadores
+
+function* helloWorld() {
+  if(true){
+    yield '🦖 ';
+  }
+  if(true) {
+    yield '🌎🌍🌏';
+  }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+
+
+
+
+
+
 
 
 
