@@ -144,7 +144,7 @@ helloPromise()
   .then(() => console.log('Hello world'))
   .catch(error => console.log(error));
   
-
+  
 // Clases, Módulos y Generadores
 // ***************************************************************************
 
